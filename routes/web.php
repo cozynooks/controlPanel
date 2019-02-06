@@ -11,4 +11,5 @@
 |
 */
 
-Route::resource('products', 'ProductController');
+Route::get('/', 'ProductController@index');
+Route::get('/new', 'ProductController@create');

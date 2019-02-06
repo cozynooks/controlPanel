@@ -1,6 +1,58 @@
+@import 'ress';
 // Variables
 @import 'variables';
 
-header {
+html, body {
+  height: 100%;
+}
+
+.Header {
   background-color: #142744;
+
+  .Header__logo {
+    padding: 0 15px;
+    width: 300px;
+    line-height: 50px;
+
+    font-size: 12px;
+    color: #B4CDD8;
+  }
+}
+
+.Container {
+  display: flex;
+  align-items: stretch;
+
+  height: 100%;
+
+  .Side {
+    padding-top: 15px;
+    padding-left: 15px;
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid #cfcfcf;
+
+    .List {
+      margin-top: 15px;
+
+      .List__item {
+        display: flex;
+        .List__itemImg {
+          padding-right: 8px;
+        }
+        .List__itemCode {
+          font-size: 12px;
+        }
+        .List__itemName {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .Main {
+    height: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
 }

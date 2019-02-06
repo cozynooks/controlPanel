@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        test
-    </body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+    {!! Form::open(['url' => 'products/new', 'method' => 'post']) !!}
+        {!! Form::text('username') !!}
+    {!! Form::close() !!}
+@endsection
