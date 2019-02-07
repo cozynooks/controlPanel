@@ -13,7 +13,10 @@
         </header>
         <div class="Container">
             <aside class="Side">
-                <h2>Products</h2>
+                <header class="Side__header">
+                    <h2>Products</h2>
+                    <a href="/new" class="Button -new"><i class="fas fa-plus"></i></a>
+                </header>
                 <div class="List">
                     <div class="List__item">
                         <div class="List__itemImg">
@@ -40,9 +43,8 @@
                 </div>
             </aside>
             <main class="Main">
-                test
+                @yield('content')
             </main>
         </div>
-        @yield('content')
     </body>
 </html>

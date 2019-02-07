@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProduct;
 
 class ProductController extends Controller
 {
@@ -34,9 +36,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProduct $request)
     {
         //
+        $product = new Product;
+        $product->code = $request->input('code');
+        $product->name = $request->input('name');
+        $product->description = $request->description;
+        $product->save();
+        return redirect('/');
+
     }
 
     /**

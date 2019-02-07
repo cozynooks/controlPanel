@@ -1,0 +1,46 @@
+.New {
+  h2 {
+    font-weight: normal;
+  }
+
+  .Form {
+    margin-top: 21px;
+    input, textarea {
+      padding: .375rem .75rem;
+      border: 1px solid #cfcfcf;
+      border-radius: 4px;
+    }
+
+    .Form__Group {
+      margin-bottom: 20px;
+
+      .InputLabel {
+        display: flex;
+        align-items: center;
+      }
+      .InputLabel__text {
+        display: inline-block;
+        width: 96px;
+
+        text-align: right;
+      }
+
+      .InputLabel__field {
+        padding-left: 16px;
+
+        .Radio {
+          list-style: none;
+        }
+      }
+    }
+
+    .Button_group {
+      text-align: center;
+
+      .Button {
+        width: 200px;
+      }
+    }
+  }
+
+}
