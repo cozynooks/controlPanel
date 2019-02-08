@@ -24,8 +24,8 @@ class StoreProduct extends FormRequest
     public function rules()
     {
         return [
-            'code' => 'required|unique:products|max:255',
-            'name' => 'required|unique:products|max:255',
+            'code' => 'required|unique:products,code,'. $this->id . ',id|regex:/^([A-Z]){2,3}\d{5}$/',
+            'name' => 'required|unique:products,name,'. $this->id . ',id|max:255',
             'description' => 'required',
         ];
     }

@@ -16,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('products.index');
+        $products = Product::all();
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -27,7 +28,8 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('products.new');
+        $products = Product::all();
+        return view('products.new', ['products' => $products]);
     }
 
     /**
@@ -42,6 +44,8 @@ class ProductController extends Controller
         $product = new Product;
         $product->code = $request->input('code');
         $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->stock = $request->input('stock');
         $product->description = $request->description;
         $product->save();
         return redirect('/');
@@ -67,7 +71,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::all();
+        $product = Product::find($id);
+        return view('products.edit', ['products' => $products, 'product' => $product]);
     }
 
     /**
@@ -77,9 +83,16 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProduct $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->code = $request->input('code');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->stock = $request->input('stock');
+        $product->description = $request->description;
+        $product->save();
+        return redirect('/');
     }
 
     /**
@@ -88,8 +101,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete($id);
+        return redirect('/');
     }
 }

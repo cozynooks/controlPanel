@@ -1,6 +1,17 @@
 .New {
-  h2 {
-    font-weight: normal;
+  .Edit__header {
+    display: flex;
+    align-items: center;
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .Button.-delete {
+      margin-left: auto;
+      color: $red;
+
+    }
   }
 
   .Form {
@@ -30,6 +41,11 @@
 
         .Radio {
           list-style: none;
+        }
+
+        .InputLabel__fieldCaption {
+          font-size: 12px;
+          color: #666666;
         }
       }
     }
