@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    {!! Form::open(['url' => 'products/new', 'method' => 'post']) !!}
-        {!! Form::text('username') !!}
-    {!! Form::close() !!}
+<div class="New">
+    <div class="Edit__header">
+        <h2> ← +ボタンで新規登録</h2>
+    </div>
+</div>
 @endsection

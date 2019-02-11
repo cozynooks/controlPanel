@@ -26,6 +26,8 @@ class StoreProduct extends FormRequest
         return [
             'code' => 'required|unique:products,code,'. $this->id . ',id|regex:/^([A-Z]){2,3}\d{5}$/',
             'name' => 'required|unique:products,name,'. $this->id . ',id|max:255',
+            'price' => 'numeric',
+            'stock' => 'numeric',
             'description' => 'required',
         ];
     }
